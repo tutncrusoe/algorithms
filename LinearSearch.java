@@ -1,5 +1,13 @@
 public class LinearSearch {
 
+    /*
+    Linear Search Applications
+    For searching operations in smaller arrays (<100 items).
+    Linear Search Complexities
+
+    Time Complexity: O(n)
+    Space Complexity: O(1)
+     */
     public static int linearSearch(int[] array, int x) {
         for (int i = 0; i < array.length; i++) {
             if (array[i] == x) {
