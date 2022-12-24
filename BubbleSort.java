@@ -3,26 +3,44 @@ import java.util.Arrays;
 public class BubbleSort {
 
     /*
-    Optimized Implementation of Bubble Sort:
-    The above function always runs O(N2) time even if the array is sorted.
-    It can be optimized by stopping the algorithm if the inner loop didn’t cause any swap.
+Hence, the number of comparisons is
 
-    Time Complexity: O(N2)
-    Auxiliary Space: O(1)
+(n-1) + (n-2) + (n-3) +.....+ 1 = n(n-1)/2
+nearly equals to n2
+
+Hence, Complexity: O(n2)
+
+Also, if we observe the code, bubble sort requires two loops. Hence, the complexity is n*n = n2
+
+1. Time Complexities
+Worst Case Complexity: O(n2)
+If we want to sort in ascending order and the array is in descending order then the worst case occurs.
+Best Case Complexity: O(n)
+If the array is already sorted, then there is no need for sorting.
+Average Case Complexity: O(n2)
+It occurs when the elements of the array are in jumbled order (neither ascending nor descending).
+2. Space Complexity
+Space complexity is O(1) because an extra variable is used for swapping.
+In the optimized bubble sort algorithm, two extra variables are used. Hence, the space complexity will be O(2).
+Bubble Sort Applications
+Bubble sort is used if
+
+complexity does not matter
+short and simple code is preferred
      */
     public static int[] bubbleSort(int[] nums) {
-        boolean swapped;
+        boolean sorted;
         for (int i = 0; i < nums.length - 1; i++) {
-            swapped = false;
+            sorted = true;
             for (int j = 0; j < nums.length - i - 1; j++) {
                 if (nums[j] > nums[j + 1]) {
                     int[] swap = swap(nums[j], nums[j + 1]);
                     nums[j] = swap[0];
                     nums[j + 1] = swap[1];
-                    swapped = true;
+                    sorted = false;
                 }
                 printArray(nums);
-                if(swapped == false) {
+                if (sorted) {
                     break;
                 }
             }
