@@ -29,7 +29,7 @@ public class QuickSort {
 
     /*
     1. Time Complexities:
-    - Worst Case Complexity [Big-O]: O(n2): It occurs when the pivot element picked is either the greatest or the smallest element.
+    - The Worst Case Complexity [Big-O]: O(n2): It occurs when the pivot element picked is either the greatest or the smallest element.
     - Best Case Complexity [Big-omega]: O(n*log n): It occurs when the pivot element is always the middle element or near to the middle element.
     - Average Case Complexity [Big-theta]: O(n*log n): It occurs when the above conditions do not occur.
 
