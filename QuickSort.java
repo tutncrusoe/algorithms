@@ -34,6 +34,11 @@ public class QuickSort {
     - Average Case Complexity [Big-theta]: O(n*log n): It occurs when the above conditions do not occur.
 
     2. Space Complexity: The space complexity for quicksort is O(log n).
+
+    *Quicksort algorithm is used when:
+    - the programming language is good for recursion.
+    - time complexity matters.
+    - space complexity matters.
     */
 
     public static void main(String args[]) {
