@@ -1,5 +1,6 @@
 /*
 https://www.youtube.com/watch?v=PgBzjlCcFvc&t=90s
+https://www.programiz.com/dsa/quick-sort
 */
 
 import java.util.Arrays;
@@ -8,7 +9,9 @@ public class QuickSort {
     public static void quickSort(int[] array, int leftMostIndex, int rightMostIndex) {
         if (leftMostIndex < rightMostIndex) {
             int pivotIndex = partition(array, leftMostIndex, rightMostIndex);
+            // recursive call on the left of pivot
             quickSort(array, leftMostIndex, pivotIndex - 1);
+            // recursive call on the right of pivot
             quickSort(array, pivotIndex + 1, rightMostIndex);
         }
     }
@@ -23,6 +26,15 @@ public class QuickSort {
         swap(pivotIndex, array[storeIndex + 1]);
         return storeIndex + 1;
     }
+
+    /*
+    1. Time Complexities:
+    - Worst Case Complexity [Big-O]: O(n2): It occurs when the pivot element picked is either the greatest or the smallest element.
+    - Best Case Complexity [Big-omega]: O(n*log n): It occurs when the pivot element is always the middle element or near to the middle element.
+    - Average Case Complexity [Big-theta]: O(n*log n): It occurs when the above conditions do not occur.
+
+    2. Space Complexity: The space complexity for quicksort is O(log n).
+    */
 
     public static void main(String args[]) {
 
