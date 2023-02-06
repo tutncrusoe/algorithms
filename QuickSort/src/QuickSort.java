@@ -5,53 +5,51 @@ import java.util.Arrays;
 class Quicksort {
 
     // method to find the partition position
-    static int partition(int array[], int low, int high) {
+    static int partition(int[] array, int leftMostIndex, int rightMostIndex) {
 
-        // choose the rightmost element as pivot
-        int pivot = array[high];
+        // choose the rightmost element as pivotIndex
+        int pivotIndex = array[rightMostIndex];
 
         // pointer for greater element
-        int i = (low - 1);
+        int storeIndex = (leftMostIndex - 1);
 
         // traverse through all elements
-        // compare each element with pivot
-        for (int j = low; j < high; j++) {
-            if (array[j] <= pivot) {
+        // compare each element with pivotIndex
+        for (int i = leftMostIndex; i < rightMostIndex; i++) {
+            if (array[i] <= pivotIndex) {
 
-                // if element smaller than pivot is found
-                // swap it with the greatr element pointed by i
-                i++;
+                // if element smaller than pivotIndex is found
+                // swap it with the greater element pointed by storeIndex
+                storeIndex++;
 
-                // swapping element at i with element at j
-                int temp = array[i];
-                array[i] = array[j];
-                array[j] = temp;
+                // swapping element at storeIndex with element at i
+                int temp = array[storeIndex];
+                array[storeIndex] = array[i];
+                array[i] = temp;
             }
-
         }
-
-        // swapt the pivot element with the greater element specified by i
-        int temp = array[i + 1];
-        array[i + 1] = array[high];
-        array[high] = temp;
+        // swapt the pivotIndex element with the greater element specified by storeIndex + 1
+        int temp = array[storeIndex + 1];
+        array[storeIndex + 1] = array[rightMostIndex];
+        array[rightMostIndex] = temp;
 
         // return the position from where partition is done
-        return (i + 1);
+        return (storeIndex + 1);
     }
 
-    static void quickSort(int array[], int low, int high) {
-        if (low < high) {
+    static void quickSort(int[] array, int leftMostIndex, int rightMostIndex) {
+        if (leftMostIndex < rightMostIndex) {
 
             // find pivot element such that
             // elements smaller than pivot are on the left
             // elements greater than pivot are on the right
-            int pi = partition(array, low, high);
+            int pivotIndex = partition(array, leftMostIndex, rightMostIndex);
 
             // recursive call on the left of pivot
-            quickSort(array, low, pi - 1);
+            quickSort(array, leftMostIndex, pivotIndex - 1);
 
             // recursive call on the right of pivot
-            quickSort(array, pi + 1, high);
+            quickSort(array, pivotIndex + 1, rightMostIndex);
         }
     }
 }
