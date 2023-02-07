@@ -27,7 +27,7 @@ Space Complexity
     }
 
     public static void process(int[] array, int x) {
-        int output = binarySearch(array, x, 0, array.length);
+        int output = binarySearch(array, x, 0, array.length - 1);
         if (output == -1) {
             System.out.println("Element not found");
         } else {

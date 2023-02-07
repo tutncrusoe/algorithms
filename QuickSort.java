@@ -21,9 +21,9 @@ public class QuickSort {
         int storeIndex = leftMostIndex - 1;
         for (int i = leftMostIndex; i < rightMostIndex; i++) {
             storeIndex++;
-            swap(array[i], array[storeIndex]);
+            //swap(array[i], array[storeIndex]);
         }
-        swap(pivotIndex, array[storeIndex + 1]);
+        //swap(pivotIndex, array[storeIndex + 1]);
         return storeIndex + 1;
     }
 
